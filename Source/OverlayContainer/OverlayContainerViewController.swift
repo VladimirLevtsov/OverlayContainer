@@ -384,11 +384,11 @@ extension OverlayContainerViewController: HeightConstraintOverlayTranslationCont
                                willTranslateOverlayWith transitionCoordinator: OverlayContainerTransitionCoordinator) {
         guard let controller = topViewController else { return }
         if transitionCoordinator.isAnimated {
-//            overlayTranslationContainerView.layoutIfNeeded()
+            overlayTranslationContainerView.layoutIfNeeded()
         }
         transitionCoordinator.animate(alongsideTransition: { [weak self] context in
-            self?.updateOverlayContainerConstraints()
-//            self?.overlayTranslationContainerView.layoutIfNeeded()
+//            self?.updateOverlayContainerConstraints()
+            self?.overlayTranslationContainerView.layoutIfNeeded()
         }, completion: nil)
         delegate?.overlayContainerViewController(
             self,
@@ -403,7 +403,7 @@ extension OverlayContainerViewController: HeightConstraintOverlayTranslationCont
     }
 
     func translationControllerDidScheduleTranslations(_ translationController: OverlayTranslationController) {
-        setNeedsOverlayContainerHeightUpdate()
+//        setNeedsOverlayContainerHeightUpdate()
     }
 
     func overlayViewController(for translationController: OverlayTranslationController) -> UIViewController? {
